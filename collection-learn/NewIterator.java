@@ -21,4 +21,12 @@ public class NewIterator implements Iterator{
         cursor++;
         return number;
     }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,5,6,7,8,9};
+        NewIterator n = new NewIterator(nums);
+        while (n.hasNext()){
+            System.out.println(n.next());
+        }
+    }
 }
