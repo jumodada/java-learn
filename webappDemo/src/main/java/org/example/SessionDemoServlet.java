@@ -6,10 +6,10 @@ import javax.servlet.http.HttpSessionListener;
 public class SessionDemoServlet implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        System.out.println(se.getSession().getCreationTime());
+        System.out.println("start");
     }
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        System.out.println(se.getSession().getServletContext().getDefaultSessionTrackingModes());
+        System.out.println("end");
     }
 }

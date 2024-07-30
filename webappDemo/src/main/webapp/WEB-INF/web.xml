@@ -4,7 +4,9 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
          metadata-complete="true">
-
+    <session-config>
+        <session-timeout>15</session-timeout> <!-- 超时时间（分钟） -->
+    </session-config>
     <description>
         Servlet and JSP Examples.
     </description>
@@ -47,5 +49,8 @@
     </filter-mapping>
     <listener>
         <listener-class>org.example.MyServletContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.example.SessionDemoServlet</listener-class>
     </listener>
 </web-app>

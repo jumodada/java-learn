@@ -1,6 +1,7 @@
 package org.example;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class Main implements Servlet {
