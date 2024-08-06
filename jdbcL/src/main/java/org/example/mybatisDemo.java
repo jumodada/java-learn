@@ -14,9 +14,9 @@ public class mybatisDemo {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Student zhaoming = new Student();
-        zhaoming.initStudent("zhaoming", "male", 32, "chengdu", 178);
-        sqlSession.insert("studentMapper.insertStudent",zhaoming);
+//        Student zhaoming = new Student();
+//        zhaoming.initStudent("zhaoming", "male", 32, "chengdu", 178);
+//        sqlSession.insert("studentMapper.insertStudent",zhaoming);
         Student student = sqlSession.selectOne("studentMapper.selectStudent", 4);
         System.out.println(
                 student.getName()
