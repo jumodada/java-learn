@@ -6,4 +6,16 @@
     <select id="selectStudent" resultType="org.example.Student">
         select * from student where id = #{id}
     </select>
+
+    <insert id="insertStudent">
+        insert into student (name, sex, age, province, height) values(#{name},#{sex}, #{age},#{province}, #{height})
+    </insert>
+
+    <update id="updateStudent">
+        update student set age =  #{age} where id = #{id}
+    </update>
+
+    <delete id="deleteStudent">
+        delete from student where id = #{id}
+    </delete>
 </mapper>
