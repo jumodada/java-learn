@@ -8,10 +8,21 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyAspect {
 
+    @Before("execution(* com.jirengu.spring.aop.service.MyBankService.*(..))")
+    public void beforex() {
+        System.out.println("前置通知x");
+    }
+
     @Before("generalPointCut()")
     public void before() {
         System.out.println("前置通知");
     }
+
+    @AfterReturning("execution(* com.jirengu.spring.aop.service.MyBankService.*(..))")
+    public void afterReturning2() {
+        System.out.println("返回通知X");
+    }
+
 
     @AfterReturning("generalPointCut()")
     public void afterReturning() {

@@ -12,12 +12,11 @@ public class BankServiceProxyTest {
     @Test
     public void testProxy() {
         // 配置代理
-        BankService bankService = new BankService();
-        BankServiceProxy bankServiceProxy = new BankServiceProxy(bankService);
+        MyBankService myBankService = new MyBankService();
         // 执行方法
-        bankServiceProxy.inquiryBalance(12);
-        bankServiceProxy.saveMoney(1, 1000);
-        bankServiceProxy.withdrawMoney(3, 2000);
+        myBankService.inquiryBalance();
+        myBankService.saveMoney(1, 1000);
+        myBankService.withdrawMoney(3, 2000);
     }
 
     @Test
@@ -27,9 +26,11 @@ public class BankServiceProxyTest {
         // 获取 bean
         MyBankService myBankService = applicationContext.getBean("myBankService", MyBankService.class);
         // 执行方法
-        myBankService.inquiryBalance(12);
+        myBankService.inquiryBalance();
         myBankService.saveMoney(1, 1000);
         myBankService.withdrawMoney(2, 1234);
+
+
     }
 
 }

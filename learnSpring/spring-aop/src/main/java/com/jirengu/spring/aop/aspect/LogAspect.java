@@ -20,12 +20,15 @@ public class LogAspect {
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
+        System.out.println(joinPoint.getArgs());
         Object[] args = joinPoint.getArgs();
         String message = String.format("%s#%s被执行，参数为%s", className, methodName, Arrays.toString(args));
         logger.info(message);
         long start = System.currentTimeMillis();
         // 执行目标方法
+        System.out.println("start");
         Object object = joinPoint.proceed();
+        System.out.println("end`");
         long end = System.currentTimeMillis();
         long interval = end - start;
         message = String.format("执行时间 %d 毫秒", interval);
